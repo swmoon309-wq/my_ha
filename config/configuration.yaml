@@ -1,0 +1,16 @@
+# Home Assistant main configuration
+homeassistant:
+  name: Home
+  unit_system: metric
+  time_zone: Asia/Seoul
+
+# Loads default set of integrations (UI, energy, backups, etc.)
+default_config:
+
+# Optional: reduce log verbosity (change to 'info' or 'debug' if needed)
+logger:
+  default: warning
+
+# Enable Lovelace YAML mode to use ui-lovelace.yaml
+lovelace:
+  mode: yaml

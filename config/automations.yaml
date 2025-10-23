@@ -1,0 +1,32 @@
+- id: hall_motion_on
+  alias: Hall - Motion turns light on at night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_motion
+      to: "on"
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-00:30:00"
+    - condition: state
+      entity_id: light.hall
+      state: "off"
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.hall
+      data:
+        brightness_pct: 60
+        transition: 0.5
+
+- id: hall_motion_off
+  alias: Hall - Turn off after 5 min no motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_motion
+      to: "off"
+      for: "00:05:00"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.hall

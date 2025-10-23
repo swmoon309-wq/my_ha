@@ -1,0 +1,25 @@
+# Zigbee2MQTT configuration
+# Docs: https://www.zigbee2mqtt.io/guide/configuration/
+
+homeassistant: true
+permit_join: false
+
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mosquitto:1883
+  user: mqtt_user
+  password: mqtt_password
+
+serial:
+  # Matches the container path from docker-compose device mapping
+  port: /dev/ttyACM0
+
+frontend:
+  port: 8099
+
+advanced:
+  log_level: info
+  # Generate a new Zigbee network key on first start
+  network_key: GENERATE
+  pan_id: GENERATE
+

@@ -1,0 +1,16 @@
+title: Home
+views:
+  - title: Home
+    path: home
+    icon: mdi:home
+    cards:
+      - type: markdown
+        content: |
+          Welcome to your Lovelace dashboard (YAML mode).
+          Edit `config/ui-lovelace.yaml` to customize.
+      - type: entities
+        title: System
+        show_header_toggle: false
+        entities:
+          - sun.sun
+

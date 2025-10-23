@@ -1,0 +1,41 @@
+# Home Assistant data and secrets
+config/home-assistant.log
+config/home-assistant.log.*
+config/home-assistant_v2.db
+config/*.db-shm
+config/*.db-wal
+config/tts/
+config/deps/
+config/.storage/
+config/.cloud/
+config/.uuid
+config/.HA_VERSION
+config/known_devices.yaml
+config/secrets.yaml
+config/backups/
+
+# Zigbee2MQTT runtime data (keep main config in git)
+zigbee2mqtt/data/*
+!zigbee2mqtt/data/configuration.yaml
+
+# Mosquitto runtime data
+mosquitto/data/
+mosquitto/log/
+
+# Docker / env
+.env
+
+# Editors and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.code-workspace
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
